@@ -1,0 +1,20 @@
+1.SELECT * FROM northwind.customers;
+2.SELECT DISTINCT country FROM northwind.customers;
+3.SELECT * FROM northwind.customers where CustomerID like "BL%";
+4.SELECT * FROM northwind.orders limit 100;
+5.SELECT * FROM northwind.customers where PostalCode = "1010" or PostalCode = "3012" or PostalCode = "12209" or PostalCode = "05023";
+select * from customers where PostalCode in (1010, 3012, 12209, 05023)
+6.SELECT * FROM northwind.orders where not ShipRegion = "Null"; 
+select * from orders`order details` where ShipRegion is not null
+7.SELECT * FROM northwind.customers order by Country, City
+8.INSERT INTO `northwind`.`customers` (`CustomerID`, `CompanyName`, `ContactName`, `ContactTitle`, `Address`, `City`, `Region`, `PostalCode`, `Country`, `Phone`, `Fax`) VALUES ('USAMI', 'USA Michigan Market', 'Kevin', 'Owner', '1234 Woodward Ave', 'Detroit', 'MI', '48826', 'USA', '(123)123-4567', '(123)123-4567');
+9.update orders set ShipRegion = "EuroZone" where ShipCountry = "France"
+10.delete FROM northwind.`order details` where Quantity = 1;
+11.SELECT avg(Quantity), max(Quantity), min(Quantity) FROM northwind.`order details`
+12.SELECT avg(Quantity), max(Quantity), min(Quantity) FROM northwind.`order details` group by OrderID
+13.SELECT CustomerID FROM northwind.orders where OrderID = 10290;
+14.SELECT * FROM northwind.customers inner join orders on northwind.customers.CustomerID = orders.CustomerID
+SELECT * FROM northwind.customers left join orders on northwind.customers.CustomerID = orders.CustomerID
+SELECT * FROM northwind.customers right join orders on northwind.customers.CustomerID = orders.CustomerID
+15.SELECT FirstName FROM northwind.employees where ReportsTo is null
+16.SELECT FirstName FROM northwind.employees where ReportsTo = 2
